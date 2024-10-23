@@ -1,49 +1,60 @@
-import React from 'react'
-import Logo from '../assets/looog.png'
+import React from 'react';
+import Logo from '../assets/looog.png';
 
 export default function HeaderInsideForm() {
   return (
     <>
-      <div className='fixed top-0 left-40 max-w-[80px]  mx-auto mt-50 z-40 overflow-hidden'>
+      {/* Logo Section */}
+      <div className='fixed top-4 left-4 sm:left-10 max-w-[50px] sm:max-w-[60px] md:max-w-[80px] z-40'>
         <img src={Logo} alt="Company Logo" />
       </div>
 
-      <div className="flex justify-center items-center mt-20 h-screen z-30 relative">
-        <div className='max-w-[300px] bg-[#fc8019] p-10 rounded-[15px] shadow'>
+      {/* Form Section */}
+      <div className="flex justify-center items-center mt-20 h-screen relative">
+        <div className='max-w-[95%] sm:max-w-[400px] bg-[#fc8019] p-6 sm:p-8 md:p-10 rounded-[15px] shadow-lg'>
           <form>
+            {/* Full Name Field */}
             <div>
-              <label className="text-black">Full Name</label>
+              <label className="text-black text-sm md:text-base">Full Name</label>
               <input 
                 type="text" 
                 name="name" 
                 placeholder="Enter Full Name" 
-                className="w-full p-2 mt-1 mb-3"
+                className="w-full p-2 mt-1 mb-3 border border-gray-300 rounded"
               />
             </div>
 
+            {/* Email Field */}
             <div>
-              <label className="text-black">Email</label>
+              <label className="text-black text-sm md:text-base">Email</label>
               <input 
                 type="email" 
                 name="email" 
                 placeholder="Enter Email" 
-                className="w-full p-2 mt-1 mb-3"
+                className="w-full p-2 mt-1 mb-3 border border-gray-300 rounded"
               />
             </div>
 
+            {/* Message Field */}
             <div>
-              <label className="text-black">Message</label>
+              <label className="text-black text-sm md:text-base">Message</label>
               <textarea 
                 name="message" 
                 placeholder="Send Message" 
-                className="w-full p-2 mt-1 mb-3"
+                className="w-full p-2 mt-1 mb-3 border border-gray-300 rounded"
               ></textarea>
             </div>
 
-            <button type="submit" className="bg-blue-800 text-white p-2 rounded">Submit</button>
+            {/* Submit Button */}
+            <button 
+              type="submit" 
+              className="w-full bg-blue-800 text-white p-2 rounded mt-3 hover:bg-blue-900 transition-colors"
+            >
+              Submit
+            </button>
           </form>
         </div>
       </div>
     </>
-  )
+  );
 }
